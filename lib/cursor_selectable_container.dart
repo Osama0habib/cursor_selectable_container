@@ -98,7 +98,7 @@ class SelectionTextWidget extends StatelessWidget {
           break;
       }
     }
-
+      print(textDirection);
     return SelectionArea(
       selectionControls: controls,
       onSelectionChanged: onSelectionChanged,
@@ -117,7 +117,7 @@ class SelectionTextWidget extends StatelessWidget {
                   convertToLogicalPixels(context, (e.bbox.y2 - e.bbox.y1));
 
               return Positioned(
-                height: fixedContainerHeight ?? lineHeight,
+                height: fixedContainerHeight == null ? lineHeight : fixedContainerHeight!.h,
                 top: scaledTop,
                 left: scaledLeft,
                 width: (e.bbox.x2.toDouble() - e.bbox.x1.toDouble()) /
