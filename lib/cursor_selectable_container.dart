@@ -51,7 +51,7 @@ class CursorSelectableContainer extends StatelessWidget {
                   image:buildImageView(image),
                 ),
               ),
-              child: SelectionTextWidget(imageSize: imageSize, selectableData: selectableData, selectedData: selectedData, onSelectionChanged: onSelectionChanged,),
+              child: SelectionTextWidget(imageSize: imageSize, selectableData: selectableData, selectedData: selectedData, onSelectionChanged: onSelectionChanged,textDirection: textDirection,),
 
             ),
           )),
