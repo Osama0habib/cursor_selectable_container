@@ -19,7 +19,7 @@ import 'custom_selection_delegates.dart';
 
 
 class CursorSelectableContainer extends StatelessWidget {
-   CursorSelectableContainer({super.key, required this.image, required this.selectableData, required this.imageSize, required this.selectedData, this.onSelectionChanged});
+   CursorSelectableContainer({super.key, required this.image, required this.selectableData, required this.imageSize, required this.selectedData, this.onSelectionChanged,this.controls,this.textDirection,this.fixedContainerHeight});
   final String image;
   final List<SelectableData> selectableData;
   final Size imageSize;
