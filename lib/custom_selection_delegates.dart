@@ -19,7 +19,7 @@ class CustomSelectionDelegate
   }
   @override
   Comparator<Selectable> get compareOrder {
-    if(textDirection != null || textDirection == TextDirection.ltr){
+    if(textDirection == null || textDirection == TextDirection.ltr){
       return super.compareOrder;
     }else {
       return _compareScreenOrder;

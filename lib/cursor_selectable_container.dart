@@ -75,6 +75,7 @@ class SelectionTextWidget extends StatelessWidget {
       this.fixedContainerHeight,
       required this.selectableData,
       this.controls,
+        this.textDirection,
       required this.selectedData,
       required this.onSelectionChanged,
       });
