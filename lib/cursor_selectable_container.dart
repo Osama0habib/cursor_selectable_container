@@ -35,29 +35,27 @@ class CursorSelectableContainer extends StatelessWidget {
     print("textDirection : $textDirection");
     ScreenUtil.init(context, designSize: imageSize);
 
-    return WidgetZoom(
-      zoomWidget: Center(
-        child: Container(
-            width: imageSize.width.r,
-            height: imageSize.height.r,
-            // constraints: BoxConstraints(maxHeight: 1123.r,maxWidth:794.r ),
+    return Center(
+      child: Container(
+          width: imageSize.width.r,
+          height: imageSize.height.r,
+          // constraints: BoxConstraints(maxHeight: 1123.r,maxWidth:794.r ),
 
-            child: Align(
-              alignment: Alignment.center,
-              child: Container(
-                width: imageSize.width.r,
-                height: imageSize.height.r,
-                decoration:  BoxDecoration(
-                  // color: Colors.amberAccent,
-                  image: DecorationImage(
-                    image:buildImageView(image),
-                  ),
+          child: Align(
+            alignment: Alignment.center,
+            child: Container(
+              width: imageSize.width.r,
+              height: imageSize.height.r,
+              decoration:  BoxDecoration(
+                // color: Colors.amberAccent,
+                image: DecorationImage(
+                  image:buildImageView(image),
                 ),
-                child: SelectionTextWidget(imageSize: imageSize, selectableData: selectableData, selectedData: selectedData, onSelectionChanged: onSelectionChanged,textDirection: textDirection,fixedContainerHeight: fixedContainerHeight,controls: controls),
-
               ),
-            )),
-      ), heroAnimationTag: "",
+              child: SelectionTextWidget(imageSize: imageSize, selectableData: selectableData, selectedData: selectedData, onSelectionChanged: onSelectionChanged,textDirection: textDirection,fixedContainerHeight: fixedContainerHeight,controls: controls),
+
+            ),
+          )),
     );
   }
 }
