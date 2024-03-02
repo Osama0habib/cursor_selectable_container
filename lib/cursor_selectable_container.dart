@@ -16,6 +16,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'custom_image_view.dart';
 import 'custom_selection_delegates.dart';
+import 'package:widget_zoom/widget_zoom.dart';
 
 
 class CursorSelectableContainer extends StatelessWidget {
@@ -34,27 +35,29 @@ class CursorSelectableContainer extends StatelessWidget {
     print("textDirection : $textDirection");
     ScreenUtil.init(context, designSize: imageSize);
 
-    return Center(
-      child: Container(
-          width: imageSize.width.r,
-          height: imageSize.height.r,
-          // constraints: BoxConstraints(maxHeight: 1123.r,maxWidth:794.r ),
+    return WidgetZoom(
+      zoomWidget: Center(
+        child: Container(
+            width: imageSize.width.r,
+            height: imageSize.height.r,
+            // constraints: BoxConstraints(maxHeight: 1123.r,maxWidth:794.r ),
 
-          child: Align(
-            alignment: Alignment.center,
-            child: Container(
-              width: imageSize.width.r,
-              height: imageSize.height.r,
-              decoration:  BoxDecoration(
-                // color: Colors.amberAccent,
-                image: DecorationImage(
-                  image:buildImageView(image),
+            child: Align(
+              alignment: Alignment.center,
+              child: Container(
+                width: imageSize.width.r,
+                height: imageSize.height.r,
+                decoration:  BoxDecoration(
+                  // color: Colors.amberAccent,
+                  image: DecorationImage(
+                    image:buildImageView(image),
+                  ),
                 ),
-              ),
-              child: SelectionTextWidget(imageSize: imageSize, selectableData: selectableData, selectedData: selectedData, onSelectionChanged: onSelectionChanged,textDirection: textDirection,),
+                child: SelectionTextWidget(imageSize: imageSize, selectableData: selectableData, selectedData: selectedData, onSelectionChanged: onSelectionChanged,textDirection: textDirection,fixedContainerHeight: fixedContainerHeight,controls: controls),
 
-            ),
-          )),
+              ),
+            )),
+      ), heroAnimationTag: "",
     );
   }
 }
