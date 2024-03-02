@@ -31,6 +31,7 @@ class CursorSelectableContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("textDirection : $textDirection");
     ScreenUtil.init(context, designSize: imageSize);
 
     return Center(
